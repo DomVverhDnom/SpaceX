@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../logo.svg";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -9,38 +10,38 @@ function Header() {
         <nav className="main-nav nav">
           <ul className="list">
             <li className="item">
-              <a href="/" className="item-link">
+              <Link to="/" className="item-link">
                 Falcon 1
-              </a>
+              </Link>
             </li>
             <li className="item">
-              <a href="/" className="item-link">
+              <Link to="/" className="item-link">
                 Falcon 9
-              </a>
+              </Link>
             </li>
             <li className="item">
-              <a href="/" className="item-link">
+              <Link to="/" className="item-link">
                 Falcon Heavy
-              </a>
+              </Link>
             </li>
             <li className="item">
-              <a href="/" className="item-link">
+              <Link to="/" className="item-link">
                 Updates
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
         <nav className="secondary-nav">
           <ul className="list">
             <li className="item">
-              <a href="/" className="item-link">
+              <Link to="/" className="item-link">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="item">
-              <a href="calendar.html" className="item-link">
+              <Link to="/Calendar" className="item-link">
                 Calendar
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

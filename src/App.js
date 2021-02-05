@@ -1,6 +1,6 @@
 import React from "react";
-
-import { Footer, Header, Main } from "./components";
+import { Route } from "react-router-dom";
+import { Footer, Header, Main, Calendar, Details } from "./components";
 
 import "./css/style.css";
 
@@ -8,7 +8,9 @@ function App() {
   return (
     <>
       <Header />
-      <Main />
+      <Route path="/" component={Main} exact />
+      <Route path="/Calendar" component={Calendar} exact />
+      <Route path="/Details" component={Details} exact />
       <Footer />
     </>
   );

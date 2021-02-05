@@ -1,5 +1,6 @@
 import React from "react";
-import falcone1 from "../img/falcon-1.png";
+import { Rocket } from "./index";
+
 function Main() {
   return (
     <>
@@ -37,7 +38,7 @@ function Main() {
               </tr>
             </thead>
           </table>
-          <img src={falcone1} alt="rocket" className="rocket" data-rellax-speed="14" />
+          <Rocket />
           <article>
             <h3 className="features-subtitle">DESCRIPTION</h3>
             <p className="features-text">
