@@ -1,5 +1,6 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
+import Iframe from "react-iframe";
 function Details() {
   return (
     <>
@@ -18,19 +19,20 @@ function Details() {
             </div>
           </div>
           <div>
-            <iframe
-              class="details-youtube"
+            <Iframe
+              className="details-youtube"
               width="560"
               height="315"
               src="https://www.youtube.com/embed/dLQ2tZEH6G0"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
+              allowfullscreen
+            />
           </div>
         </div>
-        <a href="calendar.html" class="button button-back">
-          go back
-        </a>
+        <Link to="/Calendar" class="button button-back">
+          Вернуться назад
+        </Link>
       </main>
     </>
   );

@@ -1,10 +1,10 @@
 import React from "react";
-
+import logo from "../logo.svg";
 function Footer() {
   return (
     <>
       <footer className="footer">
-        <img src="img/logo.svg" alt="logo Space X" className="logo" />
+        <img src={logo} alt="logo Space X" className="logo" />
         <nav className="footer-nav">
           <ul className="list">
             <li className="item">

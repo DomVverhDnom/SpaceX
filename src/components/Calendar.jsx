@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Calendar = () => {
   return (
@@ -15,9 +16,9 @@ const Calendar = () => {
               </div>
               <div className="launches-content">
                 <h2 className="launches-title">FalconSat</h2>
-                <a href="./details.html" className="button launches-details">
+                <Link to="/Details" className="button launches-details">
                   Подробнее
-                </a>
+                </Link>
               </div>
             </article>
           </li>
@@ -33,9 +34,9 @@ const Calendar = () => {
                     DemoSat
                   </a>
                 </h2>
-                <a href="./details.html" className="button launches-details">
+                <Link to="/Details" className="button launches-details">
                   Подробнее
-                </a>
+                </Link>
               </div>
             </article>
           </li>
@@ -51,9 +52,9 @@ const Calendar = () => {
                     Trailblazer
                   </a>
                 </h2>
-                <a href="./details.html" className="button launches-details">
+                <Link to="/Details" className="button launches-details">
                   Подробнее
-                </a>
+                </Link>
               </div>
             </article>
           </li>
@@ -67,9 +68,9 @@ const Calendar = () => {
                 <h2 className="launches-title">
                   <a href="https://en.wikipedia.org/wiki/Ratsat">RatSat</a>
                 </h2>
-                <a href="./details.html" className="button launches-details">
+                <Link to="/Details" className="button launches-details">
                   Подробнее
-                </a>
+                </Link>
               </div>
             </article>
           </li>
