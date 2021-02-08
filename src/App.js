@@ -10,6 +10,7 @@ class App extends React.Component {
   state = {
     rocket: "Falcone 1",
     rocketFeatures: null,
+    allRockets: [],
   };
 
   componentDidMount() {
@@ -18,17 +19,30 @@ class App extends React.Component {
   updateRocket() {
     this.fetchData
       .getRocket()
+      .then((data) => {
+        this.setState({ allRockets: data.map((item) => item.name) });
+        return data;
+      })
       .then((data) => data.find((item) => item.name === this.state.rocket))
       .then((rocketFeatures) => this.setState({ rocketFeatures }));
   }
+
+  changeRocket = (rocket) => {
+    this.setState(
+      {
+        rocket,
+      },
+      this.updateRocket,
+    );
+  };
   render() {
     return (
       <>
-        <Header />
-        <Route path="/" render={() => <Main rocketsName={this.state} />} />
+        <Header rocketsNames={this.state.allRockets} changeRocket={this.changeRocket} />
+        <Route path="/" render={() => <Main rocket={this.state.rocket} />} />
         <Route path="/Calendar" component={Calendar} exact />
         <Route path="/Details" component={Details} exact />
-        <Features />
+        <Features {...this.state.rocketFeatures} />
         <Footer />
       </>
     );

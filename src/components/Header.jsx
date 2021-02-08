@@ -2,33 +2,28 @@ import React from "react";
 import logo from "../logo.svg";
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header(props) {
+  function changeRocketItem(rocket) {
+    props.changeRocket(rocket);
+  }
   return (
     <>
       <header className="header">
         <img src={logo} alt="Logo Space X" className="logo" />
         <nav className="main-nav nav">
           <ul className="list">
-            <li className="item">
-              <Link to="/" className="item-link">
-                Falcon 1
-              </Link>
-            </li>
-            <li className="item">
-              <Link to="/" className="item-link">
-                Falcon 9
-              </Link>
-            </li>
-            <li className="item">
-              <Link to="/" className="item-link">
-                Falcon Heavy
-              </Link>
-            </li>
-            <li className="item">
-              <Link to="/" className="item-link">
-                Updates
-              </Link>
-            </li>
+            {props.rocketsNames.map((item, index) => (
+              <li className="item" key={index}>
+                <Link
+                  to="/"
+                  onClick={() => {
+                    changeRocketItem(item);
+                  }}
+                  className="item-link">
+                  {item}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
         <nav className="secondary-nav">

@@ -1,7 +1,13 @@
 import React from "react";
 import RellaxWrapper from "react-rellax-wrapper";
 
-function Features() {
+const rocketImg = {
+  "Falcon 1": "falcon-1",
+  "Falcon 9": "falcon-9",
+  "Falcon Heavy": "falcon-heavy",
+  Starship: "starship",
+};
+function Features({ rocket, rocketFeatures }) {
   return (
     <section className="features">
       <h2 className="features-title">
@@ -27,12 +33,16 @@ function Features() {
             </tr>
             <tr>
               <td className="table-column">PAYLOAD TO LEO</td>
-              <td className="table-column">450 kg / 992 lb</td>
+              <td className="table-column">22 / 22</td>
             </tr>
           </thead>
         </table>
-        <RellaxWrapper speed={18}>
-          <img src="img/falcon-1.png" alt="rocket" className="rocket" />
+        <RellaxWrapper speed={14}>
+          <img
+            src={`img/${rocketImg.hasOwnProperty(rocket) ? rocketImg[rocket] : ""}.png`}
+            alt="rocket"
+            className="rocket"
+          />
         </RellaxWrapper>
 
         <article>
