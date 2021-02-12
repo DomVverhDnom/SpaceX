@@ -8,7 +8,7 @@ class App extends React.Component {
   fetchData = new FetchData();
 
   state = {
-    rocket: "Falcone 1",
+    rocket: "Falcon 1",
     rocketFeatures: null,
     allRockets: [],
   };
@@ -42,7 +42,9 @@ class App extends React.Component {
         <Route path="/" render={() => <Main rocket={this.state.rocket} />} />
         <Route path="/Calendar" component={Calendar} exact />
         <Route path="/Details" component={Details} exact />
-        <Features {...this.state.rocketFeatures} />
+        {this.state.rocketFeatures && (
+          <Features {...this.state.rocketFeatures} rocket={this.state.rocket} />
+        )}
         <Footer />
       </>
     );
